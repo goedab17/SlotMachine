@@ -1,0 +1,59 @@
+
+#header:before {
+    content: '';
+    background: url('https://developer.playcanvas.com/images/user-manual/scripting/go-to-anything.gif');
+    background-size: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(2px);
+}
+#header-text {
+    color: darkorange;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 80px;
+    /* stack text above pseudoelement */
+    position: relative;
+    text-align: center;
+}
+#uName{
+
+    margin: 3px;
+    position: relative;
+
+
+}
+ #uPwd{
+     margin: 3px;
+     position: relative;
+
+ }
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+ #content
+ {
+     /*
+     padding-right: 100px;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     display: block;
+     alignment: center;
+     border: black 29px;
+
+      */
+ }
+  #authCheck{
+      margin: 3px;
+      position: relative;
+}
+#button{
+    position: relative;
+
+}
