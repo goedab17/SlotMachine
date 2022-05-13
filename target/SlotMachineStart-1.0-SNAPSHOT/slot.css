@@ -36,8 +36,13 @@ body{
 div.modal-footer, div.modal-body, div.modal-header{
     background-color: #000000de;
     color: white;
+    justify-content: center;
 }
+#paytableImg{
+    size: auto;
+    height: 500px;
 
+}
 .preview{
     position: absolute;
     left: 0;
