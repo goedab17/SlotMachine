@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SlotMachineStart:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SlotMachineStart</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SlotMachineStart-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SlotMachineStart:war exploded" />
+    </root>
+  </artifact>
+</component>

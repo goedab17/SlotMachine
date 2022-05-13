@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<body id="header">
+
+<h1 id="header-text"> Slot Machine Login</h1>
+<h2>Login</h2>
+<div class="flex-container">
+
+   <div id="content">
+    <div id="first" class="row">
+        <input type="text" id="uName" value="admin">
+        <input type="password" id="uPwd" value="admin" >
+    <p id="authCheck"></p>
+    </div>
+    <div id="second">
+        <form action="http://localhost:8080/SlotMachineStart-1.0-SNAPSHOT/poker.html">
+
+        <button id="button"  type="submit" onclick="login(uName.value, uPwd.value)">Login</button>
+        </form>
+    </div>
+   </div>
+</div>
+</body>
+</html>
