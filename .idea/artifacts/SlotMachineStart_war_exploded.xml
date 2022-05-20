@@ -19,7 +19,11 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.7.36" />
           <element id="library" level="project" name="Maven: com.nimbusds:nimbus-jose-jwt:9.16" />
           <element id="library" level="project" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" />
-          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.24" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.20" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:eclipselink:2.7.8" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:jakarta.persistence:2.2.3" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:commonj.sdo:2.1.1" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.2.23.jre7" />
         </element>
       </element>
       <element id="directory" name="META-INF">
