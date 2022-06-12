@@ -457,6 +457,7 @@ const Slot = function(canvas){
                 reel2 = reels[1][r],
                 reel3 = reels[2][r];
             let reelsStr = reel1.key + reel2.key + reel3.key;
+            console.log("*****LOG: " + reelsStr);
             //top line
             if(reel1.stop === 0){
                 if(reelsStr.match(/(Cherry){3}/g)) sum.top += bet * 2000;
