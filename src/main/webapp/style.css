@@ -25,33 +25,33 @@
 
 
 }
- #uPwd{
-     margin: 3px;
-     position: relative;
+#uPwd{
+    margin: 3px;
+    position: relative;
 
- }
+}
 .flex-container {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
- #content
- {
-     /*
-     padding-right: 100px;
-     align-items: center;
-     justify-content: center;
-     position: relative;
-     display: block;
-     alignment: center;
-     border: black 29px;
+#content
+{
+    /*
+    padding-right: 100px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: block;
+    alignment: center;
+    border: black 29px;
 
-      */
- }
-  #authCheck{
-      margin: 3px;
-      position: relative;
+     */
+}
+#authCheck{
+    margin: 3px;
+    position: relative;
 }
 #button{
     position: relative;

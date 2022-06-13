@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=480,initial-scale=1, maximum-scale=1">
+    <title>SlotMachine</title>
+    <link rel="icon" href="https://n1md7.github.io/slot-game/img/BAR.png">
+    <link rel="stylesheet" type="text/css" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="slot.css">
+    <script src="algorithm.js"></script>
+    <script src="testAlg.js"></script>
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center text-light my-3 gold"><i class="fab fa-phoenix-framework gold"></i> Slot Game</h2>
+    <div class="row justify-content-center mb-3" style="width: 100%;>
+        <div class="col col-auto" style="align-content: center">
+    <!-- <canvas id="slot" width="440" height="240"></canvas> -->
+    <div>
+        <table class="slot-main" id="slot">
+            <tr class="slot1">
+                <th><img alt="Qries" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_red.png"
+                         width="120" height="120"></th>
+                <th><img alt="Qries" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_red.png"
+                         width="120" height="120"></th>
+                <th><img alt="Qries" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_red.png"
+                         width="120" height="120"></th>
+            </tr>
+            <tr class="slot2">
+                <th><img alt="Qries" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/primogems.png"
+                         width="120" height="120"></th>
+                <th><img alt="Qries" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/primogems.png"
+                         width="120" height="120"></th>
+                <th><img alt="Qries" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/primogems.png"
+                         width="120" height="120"></th>
+            </tr>
+            <tr class="slot3">
+                <th><img alt="Qries" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_blue.png"
+                         width="120" height="120"></th>
+                <th><img alt="Qries" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_blue.png"
+                         width="120" height="120"></th>
+                <th><img alt="Qries" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_blue.png"
+                         width="120" height="120"></th>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row justify-content-center mb-3">
+    <div class="col col-auto">
+        <div class="input-group mb-3 w-75 m-auto">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Current WIN</span>
+            </div>
+            <input type="text" class="form-control w-auto" id="cwin" value="0">
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center mb-3">
+    <div class="col col-auto">
+        <button id="btspin" class="btn btn-danger px-5" onclick="spin()" id="spin"><i class="fas fa-sync-alt"></i> SPIN</button>
+        <button class="btn btn-secondary px-5" onclick="autoSpin()" value="off" id="auto">AUTO (OFF)</button>
+    </div>
+</div>
+<div class="row justify-content-center mb-3">
+    <div class="col col-auto">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Credits</span>
+            </div>
+            <input class="form-control" type="number" id="balance" value="1000" min="1" max="5000">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-dollar-sign green"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="col col-auto">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">BETx</span>
+            </div>
+            <input class="form-control" type="number" id="bet" min="10" value="10" max="30">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-coins gold"></i></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="row justify-content-center my-3">
+        <div class="col col-auto">
+           <!-- <button class="btn btn-warning w-auto" type="button" id="checkout"><i class="fas fa-money-bill-alt"></i> CHECKOUT</button>-->
+            <button class="btn btn-primary w-auto" type="button" data-toggle="modal" data-target="#payTable" ><i class="fas fa-money-bill-alt"></i> Pay Table</button>
+        </div>
+    </div>
+</div>
+
+<!-- Paytable modal -->
+<div class="modal fade" id="payTable" tabindex="-1" role="dialog" aria-labelledby="payTableTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="payTableTitle">Pay Table</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="paytableImg" src="https://raw.githubusercontent.com/goedab17/SlotMachine/image/paytable_cutted.png">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</div></body>
+</html>

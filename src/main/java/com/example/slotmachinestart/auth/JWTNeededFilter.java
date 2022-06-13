@@ -14,6 +14,11 @@ import jakarta.ws.rs.ext.Provider;
 
 import java.io.IOException;
 
+
+/*
+    Klasse:  4BHIF
+    @author: Daniel Götz
+*/
 @JWTNeeded
 @Provider
 @Priority(Priorities.AUTHORIZATION)

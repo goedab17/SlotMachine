@@ -4,7 +4,10 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
+/*
+    Klasse:  4BHIF
+    @author: Daniel Götz
+*/
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor

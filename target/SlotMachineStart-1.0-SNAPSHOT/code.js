@@ -17,7 +17,7 @@ function login(name, pwd) {
                 let auth = document.getElementById("authCheck");
                 _jwt= res.headers.get("Authorization");
                 auth.innerHTML=_jwt;
-                window.location.href = "poker.html";
+                window.location.href = "pokerbackup.html";
 
             }
             else{

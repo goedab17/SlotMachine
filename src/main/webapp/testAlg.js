@@ -1,18 +1,18 @@
 
 let roll = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4,
-            5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7,
-            7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9,
-            9, 9, 9, 9, 9, 9, 9, 9, 9 ];
+    5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7,
+    7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9,
+    9, 9, 9, 9, 9, 9, 9, 9, 9 ];
 
 let imgRoll = [ "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/primogems.png",
-                "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_red.png",
-                "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_blue.png",
-                "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/pyro_slime.png",
-                "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/hydro_slime.png",
-                "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/cryo_slime.png",
-                "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/electro_slime.png",
-                "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/dendro_slime.png",
-                "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/geo_slime.png"];
+    "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_red.png",
+    "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/fate_blue.png",
+    "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/pyro_slime.png",
+    "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/hydro_slime.png",
+    "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/cryo_slime.png",
+    "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/electro_slime.png",
+    "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/dendro_slime.png",
+    "https://raw.githubusercontent.com/goedab17/SlotMachine/image/png/geo_slime.png"];
 
 let display, einsatz, balance;
 let win = [10000, 2000, 1000, 600, 500, 400, 300, 200, 100];
@@ -38,14 +38,14 @@ function genReelNumbers() {
 
     document.getElementById("slot").innerHTML =
         "<tr><th><img id='icon1' src='"+ imgRoll[display[0][0]-1] +"' class='rotate1' width='120' height='120'></th>" +
-            "<th><img id='icon2' src='"+ imgRoll[display[0][1]-1] +"' class='rotate2' width='120' height='120'></th>" +
-            "<th><img id='icon3' src='"+ imgRoll[display[0][2]-1] +"' class='rotate3' width='120' height='120'></th></tr>" +
+        "<th><img id='icon2' src='"+ imgRoll[display[0][1]-1] +"' class='rotate2' width='120' height='120'></th>" +
+        "<th><img id='icon3' src='"+ imgRoll[display[0][2]-1] +"' class='rotate3' width='120' height='120'></th></tr>" +
         "<tr><th><img id='icon4' src='"+ imgRoll[display[1][0]-1] +"' class='rotate1' width='120' height='120'></th>" +
-            "<th><img id='icon5' src='"+ imgRoll[display[1][1]-1] +"' class='rotate2' width='120' height='120'></th>" +
-            "<th><img id='icon6' src='"+ imgRoll[display[1][2]-1] +"' class='rotate3' width='120' height='120'></th></tr>" +
+        "<th><img id='icon5' src='"+ imgRoll[display[1][1]-1] +"' class='rotate2' width='120' height='120'></th>" +
+        "<th><img id='icon6' src='"+ imgRoll[display[1][2]-1] +"' class='rotate3' width='120' height='120'></th></tr>" +
         "<tr><th><img id='icon7' src='"+ imgRoll[display[2][0]-1] +"' class='rotate1' width='120' height='120'></th>" +
-            "<th><img id='icon8' src='"+ imgRoll[display[2][1]-1] +"' class='rotate2' width='120' height='120'></th>" +
-            "<th><img id='icon9' src='"+ imgRoll[display[2][2]-1] +"' class='rotate3' width='120' height='120'></th></tr>";
+        "<th><img id='icon8' src='"+ imgRoll[display[2][1]-1] +"' class='rotate2' width='120' height='120'></th>" +
+        "<th><img id='icon9' src='"+ imgRoll[display[2][2]-1] +"' class='rotate3' width='120' height='120'></th></tr>";
     animation();
 }
 
@@ -104,8 +104,9 @@ function autoSpin() {
     autoBtn = document.getElementById("auto");
     if(autoBtn.value == "off") {
         autoBtn.value = "on"; autoBtn.innerHTML =  "AUTO (ON)";
-        loop = true;
-    } else {
+        spin();
+    }
+    else {
         autoBtn.value = "off"; autoBtn.innerHTML =  "AUTO (OFF)";
         loop = false;
     }
@@ -121,5 +122,8 @@ function spin() {
         document.getElementById("balance").value = balance;
         document.getElementById("btspin").disabled = false;
     }, 2500);
+    if(autoBtn.value == "on"){
+        spin();
+    }
 
 }

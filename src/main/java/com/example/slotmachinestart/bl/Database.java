@@ -7,6 +7,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+/*
+    Klasse:  4BHIF
+    @author: Daniel Götz
+*/
 public class Database {
     private static Database theInstance;
     private EntityManagerFactory emf;

@@ -29,7 +29,7 @@ slot.slot-inner{
 }
 
 slot.slot2 .slot-inner {
-     animation-delay: .05s;
+    animation-delay: .05s;
 }
 
 slot.slot3 .slot-inner {
