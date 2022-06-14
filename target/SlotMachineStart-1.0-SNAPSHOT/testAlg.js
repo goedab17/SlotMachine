@@ -23,6 +23,7 @@ function genReelNumbers() {
     einsatz = document.getElementById("bet").value;
     balance -= einsatz;
     display = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ];
+    document.getElementById("balance").value = balance;
 
     console.log("***** genReelNumbers: *****");
     for (let i = 0; i <= 2; i++) {
@@ -99,12 +100,21 @@ function checkMatch() {
 
 function winMoney(winIndex) { return win[winIndex-1]*einsatz/10;}
 
+function spinLoop() {
+    if(loop) {
+        spin();
+        setTimeout(spinLoop, 2750);
+    }
+}
+
+
 function autoSpin() {
     console.log("*****AutoSpin")
     autoBtn = document.getElementById("auto");
     if(autoBtn.value == "off") {
         autoBtn.value = "on"; autoBtn.innerHTML =  "AUTO (ON)";
         loop = true;
+        spinLoop();
     } else {
         autoBtn.value = "off"; autoBtn.innerHTML =  "AUTO (OFF)";
         loop = false;
@@ -115,11 +125,23 @@ function autoSpin() {
 function spin() {
     document.getElementById("cwin").value = 0;
     document.getElementById("btspin").disabled = true;
-    genReelNumbers();
-    setTimeout(() => {
-        checkMatch();
-        document.getElementById("balance").value = balance;
-        document.getElementById("btspin").disabled = false;
-    }, 2500);
 
+    balance = document.getElementById("balance").value;
+    einsatz = document.getElementById("bet").value;
+
+    if(balance-einsatz >= 0) {
+        genReelNumbers();
+        setTimeout(() => {
+            checkMatch();
+            document.getElementById("balance").value = balance;
+            if(!loop) {
+                document.getElementById("btspin").disabled = false;
+            }
+        }, 2500);
+    }
+    else {
+        autoBtn.value = "off"; autoBtn.innerHTML =  "AUTO (OFF)";
+        loop = false;
+        document.getElementById("btspin").disabled = false;
+    }
 }

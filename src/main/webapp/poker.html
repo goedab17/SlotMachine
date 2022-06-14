@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="br">
 <head>
     <meta charset="utf-8">
     <meta name="theme-color" content="#000000">
@@ -16,7 +16,7 @@
 <body>
 <div class="container">
     <h2 class="text-center text-light my-3 gold"><i class="fab fa-phoenix-framework gold"></i> Slot Game</h2>
-    <div class="row justify-content-center mb-3" style="width: 100%;>
+    <div class="row justify-content-center mb-3" style="width: 100%;">
         <div class="col col-auto" style="align-content: center">
             <!-- <canvas id="slot" width="440" height="240"></canvas> -->
             <div>
@@ -54,13 +54,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Current WIN</span>
                 </div>
-                <input type="text" class="form-control w-auto" id="cwin" value="0">
+                <label><input disabled="true" class="form-control" type="text"  id="cwin" value="0"></label>
             </div>
         </div>
     </div>
     <div class="row justify-content-center mb-3">
         <div class="col col-auto">
-            <button id="btspin" class="btn btn-danger px-5" onclick="spin()" id="spin"><i class="fas fa-sync-alt"></i> SPIN</button>
+            <button id="btspin" class="btn btn-danger px-5" onclick="spin()"><i class="fas fa-sync-alt"></i> SPIN</button>
             <button class="btn btn-secondary px-5" onclick="autoSpin()" value="off" id="auto">AUTO (OFF)</button>
         </div>
     </div>
@@ -70,7 +70,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Credits</span>
                 </div>
-                <input class="form-control" type="number" id="balance" value="1000" min="1" max="5000">
+                <label><input disabled="true" class="form-control" type="number" id="balance" value="1000"></label>
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-dollar-sign green"></i></span>
                 </div>
@@ -81,7 +81,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">BETx</span>
                 </div>
-                <input class="form-control" type="number" id="bet" min="10" value="10" max="30">
+                <label><input class="form-control" type="number" id="bet" min="10" value="10" max="30"></label>
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-coins gold"></i></span>
                 </div>
@@ -138,17 +138,17 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><img src="https://n1md7.github.io/slot-game/img/Cherry.png" width="40"></td>
-                        <td><img src="https://n1md7.github.io/slot-game/img/Cherry.png" width="40"></td>
-                        <td><img src="https://n1md7.github.io/slot-game/img/Cherry.png" width="40"></td>
+                        <td><img alt="Qries" src="https://n1md7.github.io/slot-game/img/Cherry.png" width="40"></td>
+                        <td><img alt="Qries" src="https://n1md7.github.io/slot-game/img/Cherry.png" width="40"></td>
+                        <td><img alt="Qries" src="https://n1md7.github.io/slot-game/img/Cherry.png" width="40"></td>
                         <td class="v-align">2000xBET</td>
                         <td class="v-align">1000xBET</td>
                         <td class="v-align">4000xBET</td>
                     </tr>
                     <tr>
-                        <td><img src="https://n1md7.github.io/slot-game/img/7.png" width="40"></td>
-                        <td><img src="https://n1md7.github.io/slot-game/img/7.png" width="40"></td>
-                        <td><img src="https://n1md7.github.io/slot-game/img/7.png" width="40"></td>
+                        <td><img alt="Qries" src="https://n1md7.github.io/slot-game/img/7.png" width="40"></td>
+                        <td><img alt="Qries" src="https://n1md7.github.io/slot-game/img/7.png" width="40"></td>
+                        <td><img alt="Qries" src="https://n1md7.github.io/slot-game/img/7.png" width="40"></td>
                         <td class="v-align">150xBET</td>
                         <td class="v-align">150xBET</td>
                         <td class="v-align">150xBET</td>
