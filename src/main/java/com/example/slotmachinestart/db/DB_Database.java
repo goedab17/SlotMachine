@@ -70,20 +70,20 @@ public class DB_Database {
 
     }
 
-    public static void main(String[] args) {
-        try {
-            DB_Database database= new DB_Database();
-            try {
-
-                database.connect();
-                System.out.println("Connected");
-                DB_CachedConnection cachedConnection;
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//        try {
+//            DB_Database database= new DB_Database();
+//            try {
+//
+//                database.connect();
+//                System.out.println("Connected");
+//                DB_CachedConnection cachedConnection;
+//
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

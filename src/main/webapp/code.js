@@ -1,5 +1,8 @@
-var _jwt;
+var globalVariable={
+    x: document.getElementById("uName").value
+};
 function login(name, pwd) {
+
     let user = {
         'name': name,
         'pwd': pwd

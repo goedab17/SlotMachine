@@ -23,8 +23,9 @@ function genReelNumbers() {
     einsatz = document.getElementById("bet").value;
     balance -= einsatz;
     display = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ];
+    document.getElementById("balance").value = balance;
 
-    console.log("***** genReelNumbers: *****");
+    console.log("***** genReelNumbers *****");
     for (let i = 0; i <= 2; i++) {
         display [i][0] = roll[Math.floor(Math.random() * roll.length)];
         do {
@@ -50,7 +51,7 @@ function genReelNumbers() {
 }
 
 function animation() {
-    console.log("***** Animation: *****");
+    console.log("***** Animation *****");
     document.getElementById("icon1").classList.add('rotate1');
     document.getElementById("icon2").classList.add('rotate2');
     document.getElementById("icon3").classList.add('rotate3');
@@ -63,7 +64,7 @@ function animation() {
 }
 
 function checkMatch() {
-    console.log("***** checkMatch: *****")
+    console.log("***** checkMatch *****")
     let rightAligned = false;
     let bigWin = false;
     let moneyWon = 0;
@@ -95,18 +96,35 @@ function checkMatch() {
 
     document.getElementById("cwin").value = moneyWon;
     balance += moneyWon;
+
+    if(moneyWon > 0 && loop == true) {
+        console.log("****** LOOP STOP");
+        autoBtn = document.getElementById("auto");
+        autoBtn.value = "off"; autoBtn.innerHTML =  "AUTO (OFF)";
+        loop = false;
+    }
 }
 
 function winMoney(winIndex) { return win[winIndex-1]*einsatz/10;}
 
+function spinLoop() {
+    if(loop) {
+        spin();
+        setTimeout(spinLoop, 3000);
+    }
+}
+
+
 function autoSpin() {
-    console.log("*****AutoSpin")
+    console.log("***** AutoSpin")
     autoBtn = document.getElementById("auto");
     if(autoBtn.value == "off") {
+        console.log("***** LOOP START");
         autoBtn.value = "on"; autoBtn.innerHTML =  "AUTO (ON)";
-        spin();
-    }
-    else {
+        loop = true;
+        spinLoop();
+    } else {
+        console.log("***** LOOP STOP");
         autoBtn.value = "off"; autoBtn.innerHTML =  "AUTO (OFF)";
         loop = false;
     }
@@ -116,14 +134,26 @@ function autoSpin() {
 function spin() {
     document.getElementById("cwin").value = 0;
     document.getElementById("btspin").disabled = true;
-    genReelNumbers();
-    setTimeout(() => {
-        checkMatch();
-        document.getElementById("balance").value = balance;
-        document.getElementById("btspin").disabled = false;
-    }, 2500);
-    if(autoBtn.value == "on"){
-        spin();
-    }
 
+    balance = document.getElementById("balance").value;
+    einsatz = document.getElementById("bet").value;
+
+    if(balance-einsatz >= 0) {
+        genReelNumbers();
+        setTimeout(() => {
+            checkMatch();
+            document.getElementById("balance").value = balance;
+            if(!loop) {
+                document.getElementById("btspin").disabled = false;
+            }
+        }, 2500);
+    }
+    else {
+        if(loop) {
+            console.log("***** LOOP STOP");
+            autoBtn.value = "off"; autoBtn.innerHTML =  "AUTO (OFF)";
+            loop = false;
+        }
+        document.getElementById("btspin").disabled = false;
+    }
 }

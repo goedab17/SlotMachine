@@ -49,17 +49,12 @@ public class LoginResource {
     @Consumes("application/json")
     public Response login(User user) throws SQLException {
 
-     //   Database.getTheInstance().createUsers(user.getName(),user.getPwd());
-       // Database.getTheInstance().getUserByName(user.getName());
         System.out.println(slotMachineDB.checkIfUserExists(user.getName()));
         if(slotMachineDB.checkIfUserExists(user.getName()))
         {
-//            System.out.println("in there");
+//
             String pwd = slotMachineDB.checkTheUserPassword(user.getName());
             pwd=pwd.replaceAll("\n","");
-//            System.out.println("pwd"+pwd+"ENDE");
-//            System.out.println("pwd"+user.getPwd()+"ENDE");
-//            System.out.println(pwd==user.getPwd());
         if(pwd.equals(user.getPwd())) {
             try {
                 return Response.ok().header("Authorization", createJWT(user.getName())).build();
